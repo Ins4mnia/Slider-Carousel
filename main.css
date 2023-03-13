@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Didact Gothic';
+}
+.wrapper {
+  overflow-x: hidden;
+}
+.slider {
+  display: flex;
+  transition: transform .4s ease;
+}
+.sliderSection {
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+}
+.sliderSectionProduct {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sliderTextHead {
+  font-size: 40px;
+}
+.sliderTextBody {
+  font-size: 27px;
+  padding-top: 10px;
+}
+.sliderTextFooter {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.sliderTextFooter p {
+  font-size: 27px;
+}
+.Buttons {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 7px;
+  border: 0;
+  border-radius: 40px;
+}
+@media screen and (max-width:850px) {
+  .sliderSectionProduct {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+#add {
+  border: 0;
+  font-size: 27px;
+  border-radius: 40px;
+}
+#s1 {
+  background-color: rgba(0, 128, 0,0.3);
+}
+#s2 {
+  background-color: rgba(0, 255, 255,0.3);
+}
+#s3 {
+  background-color: rgba(218, 112, 214,0.3);
+}
+#s4 {
+  background-color: rgba(0, 0, 255,0.3);
+}
+#s5 {
+  background-color: rgba(154, 205, 50,0.3);
+}
