@@ -6,6 +6,7 @@
 .wrapper {
   overflow-x: hidden;
 }
+/* SLIDER */
 .slider {
   display: flex;
   transition: transform .4s ease;
@@ -21,6 +22,9 @@
   align-items: center;
   flex-wrap: nowrap;
 }
+.sliderSectionProductImg {
+  display: block;
+}
 .sliderTextHead {
   font-size: 40px;
 }
@@ -32,40 +36,49 @@
   padding-top: 15px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .sliderTextFooter p {
   font-size: 27px;
 }
-.Buttons {
+/* BUTTONS */
+.sliderButtons {
+  text-align: center;
+}
+.Button {
   font-size: 20px;
   cursor: pointer;
-  padding: 7px;
+  padding: 2px 20px;
   border: 0;
   border-radius: 40px;
+  transition: transform 100ms linear;
 }
+#left:active {
+  transform: translateX(-1px);
+}
+#right:active {
+  transform: translateX(1px);
+}
+#add, #remove{
+  cursor: pointer;
+  border: 0;
+  font-size: 25px;
+  padding: 0px 15px;
+  border-radius: 40px;
+  transition: transform 90ms linear;
+}
+#add:active, #remove:active {
+  transform: translateY(1px);
+}
+/* MEDIA */
 @media screen and (max-width:850px) {
   .sliderSectionProduct {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
-#add {
-  border: 0;
-  font-size: 27px;
-  border-radius: 40px;
-}
-#s1 {
-  background-color: rgba(0, 128, 0,0.3);
-}
-#s2 {
-  background-color: rgba(0, 255, 255,0.3);
-}
-#s3 {
-  background-color: rgba(218, 112, 214,0.3);
-}
-#s4 {
-  background-color: rgba(0, 0, 255,0.3);
-}
-#s5 {
-  background-color: rgba(154, 205, 50,0.3);
+@media screen and (max-width:301px) {
+  .sliderTextBody {
+    display: none;
+  }
 }

@@ -3,32 +3,44 @@ const sliderSection = document.querySelectorAll('.sliderSection')
 const wrapper = document.querySelector('.wrapper')
 const left = document.getElementById('left')
 const right = document.getElementById('right')
+
 let i = 0
-function Fleft(){
-  if(i > 0) {
-    i--
-    addEvent()
+function turnLeft(){
+  if (i > 0) {
+    i--;
+    resizeElems();
   }
 }
-function Fright(){
+
+function turnRight(){
+  if (i == sliderSection.length-1){
+    i = -1;
+  }
   if (i < sliderSection.length-1){
-    i++
-    addEvent()
+    i++;
+    resizeElems();
   }
 }
-left.addEventListener('click',Fleft)
-right.addEventListener('click',Fright)
-function addEvent(){
-  sliderSection.forEach(item => {
-    resizeWindow(item)
-  });
+
+function addResizeSliderSectionFunc(){
+  sliderSection.forEach(item => {resizeSliderSection(item)});
 }
-function resizeWindow(block) {
-  block.style.width = `${document.documentElement.clientWidth}px`;
+
+function resizeSliderSection(item) {
+  item.style.width = `${document.documentElement.clientWidth}px`;
+}
+
+function resizeElems (){
   wrapper.style.width = `${document.documentElement.clientWidth}px`;
   slider.style.width = document.documentElement.clientWidth*sliderSection.length + 'px';
   slider.style.transform = `translateX(${-document.documentElement.clientWidth*i + "px"})`;
 }
-window.addEventListener('resize', addEvent)
-window.addEventListener('load', addEvent)
 
+window.addEventListener('resize', addResizeSliderSectionFunc)
+window.addEventListener('load', addResizeSliderSectionFunc)
+
+window.addEventListener('resize', resizeElems)
+window.addEventListener('load', resizeElems)
+
+left.addEventListener('click',turnLeft)
+right.addEventListener('click',turnRight)
