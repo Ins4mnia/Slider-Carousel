@@ -6,6 +6,9 @@ const right = document.getElementById('right')
 
 let i = 0
 function turnLeft(){
+  if (i == 0){
+    i = sliderSection.length;
+  }
   if (i > 0) {
     i--;
     resizeElems();
